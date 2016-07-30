@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Endpoint NodejsJS
+
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+
+    script.
+        $(document.body).on("click", "#btn_request", function(){
+            console.log("REQUESTTTTT");
+            $.ajax({
+                url: "/app_test_endpoint/get_users",
+                type: "POST",
+                data: {get_users: "ok"},
+                success: function(response){
+                    console.log(response);
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            });
+        });
+body
+    button(type="button", id="btn_request") REQUEST
+    
