@@ -4,12 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require("mongoose");
+//var mongoose = require("mongoose");
 
 var app = express();
 var server = app.listen(3000);
 
-mongoose.connect("mongodb://localhost/endpoint_users");
+//mongoose.connect("mongodb://localhost/endpoint_users");
 
 var controllers = require("./controllers/controllers");
 
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", controllers.app.get_home);
 app.post("/app_test_endpoint/get_users", controllers.app.post_home);
-app.post("/app_test_endpoint/add_user", controllers.app.add_user);
+//app.post("/app_test_endpoint/add_user", controllers.app.add_user);
 
 
 module.exports = app;

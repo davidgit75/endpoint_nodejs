@@ -1,4 +1,4 @@
-var users = require("../models/users");
+//var users = require("../models/users");
 
 exports.get = function(req, res){
     res.render("home");
@@ -29,18 +29,18 @@ exports.post = function(req, res){
             }
         ];
 
-        //res.send(object_to_serve);
+        res.send(object_to_serve);
         
-        users.find({}, function(err, us){
+        /*users.find({}, function(err, us){
             console.log(us);
             res.send(us);
-        });
+        });*/
     /*}else{
         res.send({ans: "error"});
     }*/
 };
 
-exports.add_user = function(req, res){
+/*exports.add_user = function(req, res){
     console.log("NEW USER");
     console.log(req.body);
     var new_user = new users({
@@ -52,4 +52,4 @@ exports.add_user = function(req, res){
         if(!err) console.log("New user added");
         else console.log("Error saving new user: " + err);
     });
-};
+};*/
